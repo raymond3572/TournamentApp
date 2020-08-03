@@ -43,7 +43,7 @@ namespace TrackerUI
             prizesListbox.DisplayMember = "PlaceName";
         }
 
-        private void prizesListbox_SelectedIndexChanged(object sender, EventArgs e)
+        private void PrizesListbox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -138,12 +138,19 @@ namespace TrackerUI
             tm.Prizes = selectedPrizes;
             tm.EnteredTeams = selectedTeams;
 
-            //wire our matchups
+            // wire our matchups
+            TournamentLogic.CreateRounds(tm);
+
+            tm.AlertUsersToNewRound();
 
             // Create Tournament entry
-            // Create all of the prizes entires
-            // Create all of the team entires
-            GlobalConfig.Connection.CreateTournament(tm);    
+            // Create all of the prizes entries
+            // Create all of the team entries
+            GlobalConfig.Connection.CreateTournament(tm);
+
+            TournamentViewerForm frm = new TournamentViewerForm(tm);
+            frm.Show();
+            this.Close();
         }
     }
 }

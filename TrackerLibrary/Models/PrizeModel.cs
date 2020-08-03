@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace TrackerLibrary
 {
-
     public class PrizeModel
     {
         /// <summary>
@@ -18,7 +17,7 @@ namespace TrackerLibrary
         /// <summary>
         /// Represents the place number
         /// </summary>
-        
+
         public int PlaceNumber { get; set; }
 
         /// <summary>
@@ -28,17 +27,22 @@ namespace TrackerLibrary
         public string PlaceName { get; set; }
 
         /// <summary>
-        /// Represents the prize amount
+        /// The Fixed amount this place earsn or sero if it is not used
         /// </summary>
 
         public decimal PrizeAmount { get; set; }
 
         /// <summary>
-        /// Represents the prize persecentage
+        /// The Number that represents the percentage of the overall take or
+        /// zero if it is not used. The percentage is a fraction of 1(so0.5 for 50%
         /// </summary>
 
         public double PrizePercentage { get; set; }
 
+        public PrizeModel()
+        {
+
+        }
 
         public PrizeModel(string placeName, string placeNumber, string prizeAmount, string prizePercentage)
         {
@@ -57,8 +61,9 @@ namespace TrackerLibrary
             PrizePercentage = prizePercentageValue;
         }
 
-        public PrizeModel()
+        internal decimal CalculatePrizePayout(decimal totalIncome)
         {
+            throw new NotImplementedException();
         }
     }
 }

@@ -231,7 +231,7 @@
             this.prizesListbox.Name = "prizesListbox";
             this.prizesListbox.Size = new System.Drawing.Size(337, 187);
             this.prizesListbox.TabIndex = 21;
-            this.prizesListbox.SelectedIndexChanged += new System.EventHandler(this.prizesListbox_SelectedIndexChanged);
+            this.prizesListbox.SelectedIndexChanged += new System.EventHandler(this.PrizesListbox_SelectedIndexChanged);
             // 
             // createTournamentButton
             // 

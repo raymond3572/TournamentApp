@@ -31,15 +31,16 @@ namespace TrackerUI
         private void CreateSamepleData()
         {
             availableTeamMembers.Add(new PersonModel { FirstName = "Tim", LastName = "Corey" });
-            availableTeamMembers.Add(new PersonModel { FirstName = "Guy", LastName = "Daniels" });
+            availableTeamMembers.Add(new PersonModel { FirstName = "Sue", LastName = "Storm" });
 
-            selectedTeamMembers.Add(new PersonModel { FirstName = "Valentino", LastName = "Rossi" });
-            selectedTeamMembers.Add(new PersonModel { FirstName = "Max", LastName = "Biaggi" });
+            selectedTeamMembers.Add(new PersonModel { FirstName = "Jane", LastName = "Smith" });
+            selectedTeamMembers.Add(new PersonModel { FirstName = "Bill", LastName = "Jones" });
         }
 
         private void WireUpLists()
         {
             selectTeamMemberDropDown.DataSource = null;
+
             selectTeamMemberDropDown.DataSource = availableTeamMembers;
             selectTeamMemberDropDown.DisplayMember = "FullName";
 
@@ -60,7 +61,7 @@ namespace TrackerUI
                 p.EmailAdress = emailValue.Text;
                 p.CellphoneNumber = cellphoneValue.Text;
 
-                p = GlobalConfig.Connection.CreatePerson(p);
+                GlobalConfig.Connection.CreatePerson(p);
 
                 selectedTeamMembers.Add(p);
 

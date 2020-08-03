@@ -43,5 +43,15 @@ namespace TrackerLibrary
         /// </summary>
 
         public List<List<MatchupModel>> Rounds { get; set; } = new List<List<MatchupModel>>();
+
+        internal int CheckCurrentRound()  //TODO This shouldnt be here
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AlertUsersToNewRound()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

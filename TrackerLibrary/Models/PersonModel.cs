@@ -51,5 +51,6 @@ namespace TrackerLibrary
             
         }
 
+        public object EmailAddress { get; internal set; }
     }
 }
